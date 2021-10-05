@@ -4,13 +4,19 @@
 		<style>
 			table, th, td {
 				border: 1px solid black;
-				border-collapse: collapse;
+				
 			}
 			th, td {
 				padding: 15px;
 			}
+		
 		</style>
 	</head>
+	
+	<th class = number>#</th>
+				<th class = flow>Flow</th>
+				<th class = launch >Launch screen set</th>
+				<th class = desc>Description</th>
 
 	<body>
 
@@ -28,13 +34,14 @@
 				<li>Majority of the scenarios require a valid email address. </li>
 				<li>Mobile number login, SMS TFA require a valid mobile phone number.</li>
 				<li>TFA using TOTP require scanning QR code capability and an authenticator app such as google authenticator. </li>
-				<li>Push TFA and Password less login using push authentication require an android device and Gigya Android SDK sample application.<br>Watch the following instructional videos
+				<li>Push TFA and Password less login using push authentication require an android device and Gigya Android SDK sample application. Contact SDK team to get latest demo app.<br>Watch the following instructional videos to see the usage.
 					<ol>
 						<li><a href="#/">Configure Push TFA with Android sample app.</a></li>
 						<li><a href="#/">Configure login with Push notification with android sample app.</a></li>
 					</ol>
 				</li>
 				<li>Social login tests require a valid social network account (e.g. Facebook, Google, Twitter, Yahoo)</li>
+				<li>Some scenarios instruct to send API requests that require API User key and API user secret. Contact SDK team for these parameters</li>
 			</ol>
 			<br><br>
 		      <b>Form language</b> <select Name="lang" Size="">  
@@ -98,10 +105,10 @@
 		
 			<table>
 			  <tr>
-				<th>#</th>
-				<th>Flow</th>
-				<th>Launch screen set</th>
-				<th>Description</th>
+				<th class = number>#</th>
+				<th class = flow>Flow</th>
+				<th class = launch >Launch screen set</th>
+				<th class = desc>Description</th>
 			  </tr>
 			  <tr>
 				<td>Register with email</td>
@@ -241,6 +248,26 @@
 				</td>
 			  </tr>
 			  <tr>
+				<td>Lite account progression</td>
+				<td><a href="#/" id="LinkID" onclick="
+					document.getElementById('apiKey').value='4_QBKFWA85WuSpD8RiaeAfJQ';
+					document.getElementById('screenSet').value='Default-LiteRegistration';
+					document.getElementById('startScreen').value='gigya-subscribe-with-email-screen';
+					document.getElementById('gigysScreen').submit();"
+					> Launch </a>
+				</td>
+				<td>
+					<ol>
+					  <li>Launch screen</li>
+					  <li>Register with valid user with email</li>
+					  <li>User redirected to confirmation screen</li>
+					  <li>Via browser send the following API request https://accounts.us1.gigya.com/accounts.sendLiteInvite?email=<b>ReplaceWwithRealEmail</b>&userkey=<b>ReplaceWwithAPIUserKey</b>&secret=<b>ReplaceWwithAPISecretKey</b>&APIKey=4_QBKFWA85WuSpD8RiaeAfJQ</li>
+					  <li>Check your email box for an invitation to the "Preference Center" and open the link to the center</li>
+					  <li>Set a valid password and confirm</li>
+					</ol>
+				</td>
+			  </tr>
+			  <tr>
 				<td>Login with email</td>
 				<td><a href="#/" id="LinkID" onclick="
 					document.getElementById('apiKey').value='4_QBKFWA85WuSpD8RiaeAfJQ';
@@ -258,6 +285,29 @@
 					</ol>
 				</td>
 			  </tr>
+			  
+			  <tr>
+				<td>Encounter mandatory password change request during login</td>
+				<td><a href="#/" id="LinkID" onclick="
+					document.getElementById('apiKey').value='4_QBKFWA85WuSpD8RiaeAfJQ';
+					document.getElementById('screenSet').value='Default-RegistrationLogin';
+					document.getElementById('startScreen').value='gigya-login-screen';
+					document.getElementById('gigysScreen').submit();"
+					> Launch </a>
+				</td>
+				<td>
+					<ol>
+					  <li>Launch screen</li>
+					  <li>Login with valid user: e.g. test@test.com / qwerty</li>
+					  <li>Note the user UID that appears on the test page below the login screen and use it in the next api request</li>
+					  <li>Via browser send the following API request https://accounts.us1.gigya.com/accounts.setAccountInfo?requirePasswordChange=true&uid=<b>ReplaceWithUID</b>&userkey=<b>ReplaceWithAPIUserKey</b>&secret=<b>ReplaceWwithAPIUserSecret</b>&APIKey=4_QBKFWA85WuSpD8RiaeAfJQ</li>
+					  <li>Login again with the same user</li>
+					  <li>User is forwarded to "Password Change" screen</li>
+					</ol>
+				</td>
+			  </tr>
+			  
+			  
 			  <tr>
 				<td>Login with Push authentication - Password-Less flows</td>
 				<td><a href="#/" id="LinkID" onclick="
