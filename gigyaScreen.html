@@ -11,9 +11,11 @@
 		<script>
 		
 			function onLoginEvent(e){
-				console.log("onLoginEvent");
-				document.getElementById('ai-login').innerHTML = "<b>Logged In</b>";
-				document.getElementById('ai-login.uid').innerHTML = "UID: " + e.UID;
+				if (e.UID){
+					console.log("onLoginEvent");
+					document.getElementById('ai-login').innerHTML = "<b>Logged In</b>";
+					document.getElementById('ai-login.uid').innerHTML = `UID: ${e.UID}`;
+				}
 			}
 			
 			function onLogoutEvent(e){
