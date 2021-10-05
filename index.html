@@ -145,8 +145,8 @@
 					  <li>Launch screen</li>
 					  <li>Register with valid user with email</li>
 					  <li>User should be redirected to "Profile completion" screen</li>
-					  <li>Postcode field should be marked with a red asterisk that indicates that it is a required field</li>
-					  <li>Fill any value in Postcode field and click submit</li>
+					  <li>Postcode and terms fields should be marked with a red asterisk that indicates that it is a required field</li>
+					  <li>Fill any value in Postcode field, accept terms and click submit</li>
 					</ol>
 				</td>
 			  </tr>
@@ -628,6 +628,31 @@
 					  <li>Click on "forgot password" link</li>
 					  <li>Click on submit</li>
 					  <li>User forwarded to confirmation screen</li>
+					</ol>
+				</td>
+			  </tr>
+			  <tr>
+				<td>Edit profile (Consent, subscription, radio buttons) </td>
+				<td><a href="#/" id="LinkID" onclick="
+					document.getElementById('apiKey').value='4_tTso9rMByVxNRGefBxyjTA';
+					document.getElementById('screenSet').value='Default-RegistrationLogin';
+					document.getElementById('startScreen').value='gigya-register-screen';
+					document.getElementById('gigysScreen').submit();"
+					> Launch </a>
+				</td>
+				<td>
+					<ol>
+					  <li>Launch screen</li>
+					  <li>Register with valid user with email</li>
+					  <li>User should be redirected to "Profile completion" screen</li>
+					  <li>Postcode and terms fields should be marked with a red asterisk that indicates that it is a required field</li>
+					  <li>Fill any value in postcode field, accept terms and click submit</li>
+					  <li><a href="#/" id="LinkID" onclick="
+						   document.getElementById('apiKey').value='4_tTso9rMByVxNRGefBxyjTA';
+						   document.getElementById('screenSet').value='Default-ProfileUpdate';
+						   document.getElementById('startScreen').value='gigya-update-profile-screen';
+						   document.getElementById('gigysScreen').submit();"
+						   > Launch</a> Edit profile screen to watch profile details and edit it</li>
 					</ol>
 				</td>
 			  </tr>
