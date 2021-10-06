@@ -279,8 +279,7 @@
 					  <li>Login with non existing user to see form errors: non@existing.com / qwerty</li>
 					</ol>
 				</td>
-			  </tr>
-			  
+			  </tr>			  
 			  <tr>
 				<td>Encounter mandatory password change request during login</td>
 				<td><a href="#/" id="LinkID" onclick="
@@ -294,7 +293,7 @@
 					<ol>
 					  <li>Launch screen</li>
 					  <li>Login with valid user: e.g. test@test.com / qwerty</li>
-					  <li>Note the user UID that appears on the test page below the login screen and use it in the next api request</li>
+					  <li>Note the user UID that appears on the test page below the login screen and use it in the next API request</li>
 					  <li>Via browser send the following API request https://accounts.us1.gigya.com/accounts.setAccountInfo?requirePasswordChange=true&uid=<b>ReplaceWithUID</b>&userkey=<b>ReplaceWithAPIUserKey</b>&secret=<b>ReplaceWwithAPIUserSecret</b>&APIKey=4_QBKFWA85WuSpD8RiaeAfJQ</li>
 					  <li>Login again with the same user</li>
 					  <li>User is forwarded to "Password Change" screen</li>
@@ -711,13 +710,13 @@
 						   > Launch</a> Edit profile screen to watch profile details and edit it
 					  </li>
 					  <li>Click "Set or edit phone number"</li>
-					  <li>Provide valid phone nubmer, click "Get the code"</li>
+					  <li>Provide valid phone number, click "Get the code"</li>
 					  <li>Provide the code and click verify to complete the process</li>
 					</ol>
 				</td>
 			  </tr>
 			  <tr>
-				<td>Set or edit email (with otp verificaiton) via edit profile </td>
+				<td>Set or edit email (with OTP verification) via edit profile </td>
 				<td><a href="#/" id="LinkID" onclick="
 					document.getElementById('apiKey').value='4_QBKFWA85WuSpD8RiaeAfJQ';
 					document.getElementById('screenSet').value='Default-RegistrationLogin';
@@ -742,6 +741,149 @@
 					</ol>
 				</td>
 			  </tr>
+			  <tr>
+				<td>Change SMS TFA device</td>
+				<td><a href="#/" id="LinkID" onclick="
+					document.getElementById('apiKey').value='4_E2MroaaI0g8OZOhn52APpg';
+					document.getElementById('screenSet').value='Default-RegistrationLogin';
+					document.getElementById('startScreen').value='gigya-register-screen';
+					document.getElementById('gigysScreen').submit();"
+					> Launch </a>
+				</td>
+				<td>
+					<ol>
+					  <li>Launch screen</li>
+					  <li>Start registering with valid email</li>
+					  <li>On "Securing Your Account" screen make sure Phone (SMS) is selected in the "Authentication Method"</li>
+					  <li>Fill details and click get the code</li>
+					  <li>Fill received SMS and click submit</li>
+					  <li><a href="#/" id="LinkID" onclick="
+						   document.getElementById('apiKey').value='4_E2MroaaI0g8OZOhn52APpg';
+						   document.getElementById('screenSet').value='Default-ProfileUpdate';
+						   document.getElementById('startScreen').value='gigya-update-profile-screen';
+						   document.getElementById('gigysScreen').submit();"
+						   > Launch</a> Edit profile screen to watch profile details
+					  </li>
+					  <li>Click "Verification methods"</li>
+					  <li>Click "Edit" to change device, set a new device and verify it by ocde</li>
+					</ol>
+				</td>
+			  </tr>
+			  <tr>
+				<td>Change TOTP TFA device</td>
+				<td><a href="#/" id="LinkID" onclick="
+					document.getElementById('apiKey').value='4_E2MroaaI0g8OZOhn52APpg';
+					document.getElementById('screenSet').value='Default-RegistrationLogin';
+					document.getElementById('startScreen').value='gigya-register-screen';
+					document.getElementById('gigysScreen').submit();"
+					> Launch </a>
+				</td>
+				<td>
+					<ol>
+					  <li>Launch screen</li>
+					  <li>Start registering with valid email</li>
+					  <li>On "Securing Your Account" screen make sure "Time based Authentication" is selected in the "Authentication Method"</li>
+					  <li>Scan QR code via your authenticator app</li>
+					  <li>Fill the code from the authenticator app and click submit</li>
+					  <li><a href="#/" id="LinkID" onclick="
+						   document.getElementById('apiKey').value='4_E2MroaaI0g8OZOhn52APpg';
+						   document.getElementById('screenSet').value='Default-ProfileUpdate';
+						   document.getElementById('startScreen').value='gigya-update-profile-screen';
+						   document.getElementById('gigysScreen').submit();"
+						   > Launch</a> Edit profile screen to watch profile details
+					  </li>
+					  <li>Click "Verification methods"</li>
+					  <li>Click "Change Device" to change device, scan a new QA code and confirm</li>
+					</ol>
+				</td>
+			  </tr>
+			  <tr>
+				<td>Change TOTP TFA device</td>
+				<td><a href="#/" id="LinkID" onclick="
+					document.getElementById('apiKey').value='4_E2MroaaI0g8OZOhn52APpg';
+					document.getElementById('screenSet').value='Default-RegistrationLogin';
+					document.getElementById('startScreen').value='gigya-register-screen';
+					document.getElementById('gigysScreen').submit();"
+					> Launch </a>
+				</td>
+				<td>
+					<ol>
+					  <li>Launch screen</li>
+					  <li>Start registering with valid email</li>
+					  <li>On "Securing Your Account" screen make sure "Time based Authentication" is selected in the "Authentication Method"</li>
+					  <li>Scan QR code via your authenticator app</li>
+					  <li>Fill the code from the authenticator app and click submit</li>
+					  <li><a href="#/" id="LinkID" onclick="
+						   document.getElementById('apiKey').value='4_E2MroaaI0g8OZOhn52APpg';
+						   document.getElementById('screenSet').value='Default-ProfileUpdate';
+						   document.getElementById('startScreen').value='gigya-update-profile-screen';
+						   document.getElementById('gigysScreen').submit();"
+						   > Launch</a> Edit profile screen to watch profile details
+					  </li>
+					  <li>Click "Verification methods"</li>
+					  <li>Click "Change Device" to change device, scan a new QA code and confirm</li>
+					</ol>
+				</td>
+			  </tr><tr>
+				<td>Use backup code (while TOTP TFA enabled)</td>
+				<td><a href="#/" id="LinkID" onclick="
+					document.getElementById('apiKey').value='4_E2MroaaI0g8OZOhn52APpg';
+					document.getElementById('screenSet').value='Default-RegistrationLogin';
+					document.getElementById('startScreen').value='gigya-register-screen';
+					document.getElementById('gigysScreen').submit();"
+					> Launch </a>
+				</td>
+				<td>
+					<ol>
+					  <li>Launch screen</li>
+					  <li>Start registering with valid email</li>
+					  <li>On "Securing Your Account" screen make sure "Time based Authentication" is selected in the "Authentication Method"</li>
+					  <li>Scan QR code via your authenticator app</li>
+					  <li>Fill the code from the authenticator app and click submit</li>
+					  <li><a href="#/" id="LinkID" onclick="
+						   document.getElementById('apiKey').value='4_E2MroaaI0g8OZOhn52APpg';
+						   document.getElementById('screenSet').value='Default-ProfileUpdate';
+						   document.getElementById('startScreen').value='gigya-update-profile-screen';
+						   document.getElementById('gigysScreen').submit();"
+						   > Launch</a> Edit profile screen to watch profile details
+					  </li>
+					  <li>Click "Verification methods"</li>
+					  <li>Click "Backup codes" to view current set of codes</li>
+					  <li>Click "Generate new codes" to generate a new set. Remember one code</li>
+					  <li><a href="#/" id="LinkID" onclick="
+						   document.getElementById('apiKey').value='4_E2MroaaI0g8OZOhn52APpg';
+						   document.getElementById('screenSet').value='Default-RegistrationLogin';
+						   document.getElementById('startScreen').value='gigya-login-screen';
+						   document.getElementById('gigysScreen').submit();"
+						   > Launch</a> Launch login screen and try to login
+					  </li>
+					  <li>Don't use authenticator code to login, click on "Can't access your app? Use a backup code". </li>
+					  <li>Use the code you remembered on previous step to complete login . </li>
+					</ol>
+				</td>
+			  </tr>		
+			  <tr>
+				<td>Link between site user and social user (Add connection)</td>
+				<td><a href="#/" id="LinkID" onclick="
+					document.getElementById('apiKey').value='4_QBKFWA85WuSpD8RiaeAfJQ';
+					document.getElementById('screenSet').value='Default-RegistrationLogin';
+					document.getElementById('startScreen').value='gigya-login-screen';
+					document.getElementById('gigysScreen').submit();"
+					> Launch </a>
+				</td>
+				<td>
+					<ol>
+					  <li>Launch screen</li>
+					  <li>Login with valid user: test@test.com / qwerty</li>
+					  <li>Scroll down to "Gigya Add connection UI" and click on one of the social networks to link it to your site account </li>
+					  <li>Complete login</li>
+					  <li>"Gigya Add connection UI" and "Gigya Edit connection UI" should update and reflect that your social identity is logged in and connected</li>
+					  <ol>
+					  <li>On "Gigya Add connection UI": Green checkmark appear on the social network icon</li>
+					  <li>On "Gigya Edit connection UI": "connect" link changes to "disconnect"</li>
+					</ol>
+				</td>
+			  </tr>					  
 			</table>
 		
 		</form>

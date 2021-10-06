@@ -3,23 +3,36 @@
 	<body>
 	
 
-	
+		<h2>Gigya Screen Set</h2>
 		<div id='RAASLogin'></div>
-		<div> <span id='ai-login'> </span> </div>
+		<br>
+		<div> <h2>Login status</h2> <span id='ai-login'> </span> </div>
 		<div> <span id='ai-login.uid'> </span> </div>
+		<h2>Gigya Social UI</h2>
+		<div id='SocialUI'></div>
+		
+		<h2>Gigya Add connection UI</h2>
+		<div id='AddConnection'></div>
+		
+		<h2>Gigya Edit connection UI</h2>
+		<div id='EditConnection'></div>
+
 		
 		<script>
 		
 			function onLoginEvent(e){
 				if (e.UID){
 					console.log("onLoginEvent");
-					document.getElementById('ai-login').innerHTML = "<b>Logged In</b>";
+					document.getElementById('ai-login').innerHTML = "Logged In";
 					document.getElementById('ai-login.uid').innerHTML = `UID: ${e.UID}`;
+				}
+				else{
+					document.getElementById('ai-login').innerHTML = "Logged out";
 				}
 			}
 			
 			function onLogoutEvent(e){
-				document.getElementById('ai-login').innerHTML = "<b>Logged out</b>";
+				document.getElementById('ai-login').innerHTML = "Logged out";
 				document.getElementById('ai-login.uid').innerHTML = "";
 			}
 		
@@ -61,6 +74,15 @@
 					callback: function (cb) {
 					onLoginEvent(cb);
 					}
+				});
+				gigya.socialize.showLoginUI({
+					containerID: 'SocialUI'
+				});
+				gigya.socialize.showAddConnectionsUI({
+					containerID: 'AddConnection'
+				});
+				gigya.socialize.showEditConnectionsUI({
+					containerID: 'EditConnection'
 				});
 			};		
 			
