@@ -55,6 +55,14 @@
 				gigya.accounts.addEventHandlers({
 					onLogin: onLoginEvent
 				});
+				var params = {
+					containerID: 'RAASLogin',
+					sessionExpiration: -2,
+					authFlow: 'popup',
+					startScreen: document.getElementById("startScreen").value,
+					screenSet: document.getElementById("screenSet").value,	
+					onError: (e) => {console.log('my error: ' + JSON.stringify(e))},
+				};
 				gigya.accounts.showScreenSet(params);
 			};
 
