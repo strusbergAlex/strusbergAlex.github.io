@@ -49,17 +49,18 @@
 					if (decodeURIComponent(pair[0]) == variable) {
 						return decodeURIComponent(pair[1]);
 					}
-				}					
+				}
+				return '';
 			}
 			
 			const apiKey = getQueryVariable('apiKey');
 			const screenSet = getQueryVariable('screenSet');
 			const startScreen = getQueryVariable('startScreen');
 			const lang = getQueryVariable('lang');
-			
+			const dc = getQueryVariable('dc') === '' ? 'us1' : getQueryVariable('dc');
 		
 			let gigyaSrc = document.createElement("script");
-			gigyaSrc.setAttribute("src", `https://cdns.us1.gigya.com/js/gigya.js?apiKey=${apiKey}`);
+			gigyaSrc.setAttribute("src", `https://cdns.${dc}.gigya.com/js/gigya.js?apiKey=${apiKey}`);
 			document.body.appendChild(gigyaSrc);
 		
 			const params = {
