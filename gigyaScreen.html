@@ -52,7 +52,11 @@
 				}
 				return '';
 			}
-			
+
+			customLangParams = {
+				'this_field_is_required' : '%fieldname is a required field'
+			};
+
 			const apiKey = getQueryVariable('apiKey');
 			const screenSet = getQueryVariable('screenSet');
 			const startScreen = getQueryVariable('startScreen');
@@ -67,7 +71,8 @@
 				containerID: `RAASLogin`,
 				screenSet: screenSet,
 				startScreen: startScreen,
-				lang: lang
+				lang: lang,
+				customLang: customLangParams
 			}  
 
 			onGigyaServiceReady = function () {
