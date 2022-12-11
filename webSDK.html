@@ -879,11 +879,46 @@
 					  <li>Complete login</li>
 					  <li>"Gigya Add connection UI" and "Gigya Edit connection UI" should update and reflect that your social identity is logged in and connected</li>
 					  <ol>
-					  <li>On "Gigya Add connection UI": Green checkmark appears on the social network icon</li>
-					  <li>On "Gigya Edit connection UI": "connect" link changes to "disconnect"</li>
+					  	<li>On "Gigya Add connection UI": Green checkmark appears on the social network icon</li>
+					  	<li>On "Gigya Edit connection UI": "connect" link changes to "disconnect"</li>
+					  </ol>
 					</ol>
 				</td>
 			  </tr>
+
+				<tr>
+					<td>Subscribe to subscription channels</td>
+					<td><a href="#/" id="LinkID" onclick="
+					document.getElementById('apiKey').value='4_6YudR0tpdevfMMVJmD8isg';
+					document.getElementById('screenSet').value='New_14-06-22-RegistrationLogin';
+					document.getElementById('startScreen').value='gigya-login-screen';
+					document.getElementById('gigysScreen').submit();"
+					> Launch </a>
+					</td>
+					<td>
+						<ol>
+							<li>Launch initial screen</li>
+							<li>Login with valid user: test@test.com / qwerty or register as a new one</li>
+							<li><a href="#/" id="LinkID" onclick="
+								   document.getElementById('apiKey').value='4_E2MroaaI0g8OZOhn52APpg';
+								   document.getElementById('screenSet').value='New_12-11-22-Subscriptions';
+								   document.getElementById('startScreen').value='gigya-sms-subscription-subscribe-full-screen';
+								   document.getElementById('gigysScreen').submit();"
+							> Launch</a> Launch Subscription screen
+							<li>Enter a valid mobile number and click "verify"</li>
+							<li>Enter incorrect code</li>
+							<li>Wait for a couple of seconds</li>
+							<li>An error should appear</li>
+							<li>Click resend</li>
+							<li>Enter the code received by sms</li>
+							<li>Wait for a couple of seconds</li>
+							<li>Number should be verified : "verified" text should appear</li>
+							</li>
+						</ol>
+					</td>
+				</tr>
+
+
 			</table>
 
 		</form>
