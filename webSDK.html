@@ -399,7 +399,6 @@
 					<ol>
 					  <li>Launch screen</li>
 					  <li>Register with a valid email and confirm email using the link that was sent via email</li>
-					  <li>Wait 5 minutes or clear browser cookies an</li>
 					  <li>Login with the same user at <a href="#/" id="LinkID" onclick="
 							document.getElementById('apiKey').value='4_Lq73PDxVL9tGmbCG7Xlocg';
 							document.getElementById('screenSet').value='New_14-06-22-RegistrationLogin';
@@ -425,7 +424,7 @@
 					<ol>
 					  <li>Launch screen</li>
 					  <li>Login with the same user you registered with during the registration with SMS TFA</li>
-					  <li>Click on "Didn't get the code" link and then "Get the code"</li>
+					  <li>Click on "Didn't get the code link" and then "Get the code"</li>
 					  <li>Fill the SMS code you got and click Submit</li>
 					</ol>
 				</td>
@@ -766,6 +765,34 @@
 					  </li>
 					  <li>Click "Verification methods"</li>
 					  <li>Click "Edit" to change device, set a new device and verify it by ocde</li>
+					</ol>
+				</td>
+			  </tr>
+			  <tr>
+				<td>Change TOTP TFA device</td>
+				<td><a href="#/" id="LinkID" onclick="
+					document.getElementById('apiKey').value='4_E2MroaaI0g8OZOhn52APpg';
+					document.getElementById('screenSet').value='New_14-06-22-RegistrationLogin';
+					document.getElementById('startScreen').value='gigya-register-screen';
+					document.getElementById('gigysScreen').submit();"
+					> Launch </a>
+				</td>
+				<td>
+					<ol>
+					  <li>Launch screen</li>
+					  <li>Start registering with valid email</li>
+					  <li>On "Securing Your Account" screen make sure "Time based Authentication" is selected in the "Authentication Method"</li>
+					  <li>Scan QR code via your authenticator app</li>
+					  <li>Fill the code from the authenticator app and click submit</li>
+					  <li><a href="#/" id="LinkID" onclick="
+						   document.getElementById('apiKey').value='4_E2MroaaI0g8OZOhn52APpg';
+						   document.getElementById('screenSet').value='New_14-06-22-ProfileUpdate';
+						   document.getElementById('startScreen').value='gigya-update-profile-screen';
+						   document.getElementById('gigysScreen').submit();"
+						   > Launch</a> Edit profile screen to watch profile details
+					  </li>
+					  <li>Click "Verification methods"</li>
+					  <li>Click "Change Device" to change device, scan a new QA code and confirm</li>
 					</ol>
 				</td>
 			  </tr>
