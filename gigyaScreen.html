@@ -77,13 +77,15 @@
 			gigyaSrc.setAttribute("src", `https://cdns.${dc}.gigya.com/js/gigya.js?apiKey=${apiKey}`);
 			document.body.appendChild(gigyaSrc);
 
-			const params = Objec.assign({
+			const params = {
 				screenSet: screenSet,
 				startScreen: startScreen,
 				lang: lang,
 				customLang: customLangParams
-			},{containerID: `RAASLogin`
-			});
+			};
+
+            if (container)
+                params.containerID = 'RAASLogin';
 
 			onGigyaServiceReady = function () {
 				gigya.accounts.showScreenSet(params);
