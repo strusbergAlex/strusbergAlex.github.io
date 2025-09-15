@@ -24,16 +24,16 @@
 		<div> <span id='ai-login.uid'> </span> </div>
 		<h1>Gigya Social UI</h1>
 		<div class=gigyaSDK id='SocialUI'></div>
-		
+
 		<h1>Gigya Add connection UI</h1>
 		<div class=gigyaSDK id='AddConnection'></div>
-		
+
 		<h1>Gigya Edit connection UI</h1>
 		<div class=gigyaSDK id='EditConnection'></div>
 
-		
+
 		<script>
-		
+
 			function onLoginEvent(e){
 				if (e.UID){
 					console.log("onLoginEvent");
@@ -44,12 +44,12 @@
 					document.getElementById('ai-login').innerHTML = "Logged out";
 				}
 			}
-			
+
 			function onLogoutEvent(e){
 				document.getElementById('ai-login').innerHTML = "Logged out";
 				document.getElementById('ai-login.uid').innerHTML = "";
 			}
-		
+
 			function getQueryVariable(variable) {
 				var query = window.location.search.substring(1);
 				var vars = query.split('&');
@@ -71,18 +71,21 @@
 			const startScreen = getQueryVariable('startScreen');
 			const lang = getQueryVariable('lang');
 			const dc = getQueryVariable('dc') === '' ? 'us1' : getQueryVariable('dc');
-		
+			const container = getQueryVariable('container') === 'true';
+
 			let gigyaSrc = document.createElement("script");
 			gigyaSrc.setAttribute("src", `https://cdns.${dc}.gigya.com/js/gigya.js?apiKey=${apiKey}`);
 			document.body.appendChild(gigyaSrc);
-		
+
 			const params = {
-				containerID: `RAASLogin`,
 				screenSet: screenSet,
 				startScreen: startScreen,
 				lang: lang,
 				customLang: customLangParams
-			}  
+			};
+
+            if (container)
+                params.containerID = 'RAASLogin';
 
 			onGigyaServiceReady = function () {
 				gigya.accounts.showScreenSet(params);
@@ -113,10 +116,10 @@
 					width: 220,
 					height: 300
 				});
-			};		
-			
+			};
+
 		</script>
-		
+
 	</body>
 
 </html>
